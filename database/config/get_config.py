@@ -6,7 +6,9 @@ def get_config(config_file_path: str) -> Dict[str, str]:
     try:
         with open(config_file_path, 'r') as config_file:
             config = yaml.safe_load(config_file)
-
+        
+        if not isinstance(config, dict):
+            raise ValueError("The YAML content should represent a dictionary.")
         database_config = config.get('database', {})
         db_host = database_config.get('host', '')
         db_port = str(database_config.get('port', ''))
