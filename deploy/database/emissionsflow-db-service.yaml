@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: emissionsflow-db-service
+  labels:
+    app: emissionsflow-db
+spec:
+  selector:
+    app: emissionsflow-db
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: 5432
+      nodePort: 30030
+  type: NodePort
