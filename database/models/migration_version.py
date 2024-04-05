@@ -1,8 +1,8 @@
 from sqlalchemy import Column, Integer, DateTime
-from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime, timezone
 
-Base = declarative_base()
+from database.models.base import Base
+
 
 class MigrationVersion(Base):
     __tablename__ = 'migration_version'

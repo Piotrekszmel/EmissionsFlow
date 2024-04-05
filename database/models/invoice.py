@@ -1,12 +1,12 @@
-from sqlalchemy import Column, Integer, Float, Enum
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, Float, String
 
-Base = declarative_base()
+from database.models.base import Base
+
 
 class Invoice(Base):
     __tablename__ = 'invoices'
 
     id = Column(Integer, primary_key=True)
-    type = Column(Enum('Type1', 'Type2', 'Type3'), nullable=False)
+    invoice_type = Column(String, nullable=False)
     price = Column(Float, nullable=False)
     quantity = Column(Float, nullable=False)
