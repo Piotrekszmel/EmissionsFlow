@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, DateTime
 from datetime import datetime, timezone
 
-from database.models.base import Base
+from database.models.alembic.base import Base
 
 
 class MigrationVersion(Base):
