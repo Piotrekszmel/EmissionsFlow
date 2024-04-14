@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Float, String
 
-from database.models.base import Base
+from database.models.alembic.base import Base
 
 
 class Invoice(Base):
