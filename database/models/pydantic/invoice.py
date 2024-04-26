@@ -21,9 +21,3 @@ class Invoice(BaseModel):
     total_net_sales_value: float
     tax_amounts: float
     total_amount_including_tax: float
-
-    @field_validator('nip')
-    def check_nip_length(cls, value):
-        if len(value) not in (10, 12):
-            raise ValueError('NIP must be either 10 or 12 characters long')
-        return value
