@@ -1,0 +1,26 @@
+name: Run Tests
+
+on:
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10.10"
+
+      - name: Run install_dependencies.sh
+        run: ./install_dependencies.sh # Adjust the path as needed
+
+      - name: Run tests
+        run: |
+          pytest tests/
